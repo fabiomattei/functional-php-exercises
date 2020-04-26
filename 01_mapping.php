@@ -72,6 +72,7 @@ print_r($doubled_numbers);
 
 echo "***********************************************\n";
 echo "  Exercise  6\n";
+echo "  Working with two arrays \n";
 echo "***********************************************\n";
 
 function mySecondfunction( $v1, $v2 ) {
@@ -85,6 +86,22 @@ $a1=array("Horse","Dog","Cat");
 $a2=array("Cow","Dog","Rat");
 
 print_r( array_map("mySecondfunction", $a1, $a2) );
+
+
+echo "***********************************************\n";
+echo "  Exercise  7\n";
+echo "  Passing array keys \n";
+echo "***********************************************\n";
+
+$letters = ['a', 'b', 'c', 'd', 'e'];
+
+$pairs = array_map(
+    fn($letter, $index) => "The letter at position $index is $letter",
+    $letters,
+    array_keys($letters),
+);
+
+print_r($pairs);
 
 
 ?>
